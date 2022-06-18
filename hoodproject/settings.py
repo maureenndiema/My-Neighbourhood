@@ -44,6 +44,11 @@ INSTALLED_APPS = [
 
 ]
 
+UPLOADCARE = {
+    'pub_key': '036918ca173eb7f290ae',
+    'secret': 'ac5f4dfeae85c78498b0',
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
