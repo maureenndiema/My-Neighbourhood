@@ -13,6 +13,11 @@ import os
 from pathlib import Path
 import dj_database_url
 from decouple import config, Csv
+import django_heroku
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,6 +47,7 @@ INSTALLED_APPS = [
     'hoodapp',
     'crispy_forms',
     'pyuploadcare.dj',
+    'cloudinary',
 
 ]
 
@@ -150,3 +156,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'index'
 
 LOGOUT_REDIRECT_URL = 'index'
+
+django_heroku.settings(locals())
+
+cloudinary.config( 
+  cloud_name = "qwertyyuxcvq", 
+  api_key = "729284528958388", 
+  api_secret = "Q0iTEFaFYMkMCzjvrR4K5dQ1_HY" 
+)
