@@ -79,9 +79,12 @@ WSGI_APPLICATION = 'hoodproject.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hood',
+        'USER': 'maureen',
+        'PASSWORD':'1234',
+    }
 }
 
 db_from_env = dj_database_url.config(conn_max_age=500)
