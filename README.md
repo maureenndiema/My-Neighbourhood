@@ -6,7 +6,7 @@
 
 ## Description
    
-   This is a neighborhood app where a user must signup first, be able to join a hood owned by the hood admin, and once you join a hood, one can see businesses and posts in only that hood they belong to.
+   This is a neighborhood app where a user must signup first to be able to join a hood owned by the hood admin,once you join a hood, one can see businesses and posts in only the hood they belong to.
 
 ## Live Link
    
