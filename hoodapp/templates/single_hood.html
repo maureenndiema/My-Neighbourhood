@@ -22,7 +22,7 @@
                             <p class="card-text">{{hood.description}}</p>
                             <p class="card-text"><span class="text-info">Police Tell</span>
                                 &nbsp;<strong>{{hood.police_number}}</strong> |
-                                <span class="text-info">Hospital Tell</span> <strong>{{hood.health_tell}}</strong></p>
+                                <span class="text-danger">Hospital Tell</span> <strong>{{hood.health_tell}}</strong></p>
                             <p class="card-text">Administrator: <small class="text-muted">
                                 {{ hood.admin.user.username }}</small></p>
                         </div>
@@ -34,11 +34,11 @@
     <div class="container bg-white hoode">
         <div class="row">
             <div class="col-md-12">
-                <a href="" class="btn btn-sm btn-outline-info mb-4 mr-4" data-toggle="modal" data-target="#ModalCenter">Add
+                <a href="" class="btn btn-sm btn-outline-danger mb-4 mr-4" data-toggle="modal" data-target="#ModalCenter">Add
                     Business</a>
-                <a class="btn btn-sm btn-outline-info mb-4" href="{% url 'post' hood.id %}">New Post</a>
+                <a class="btn btn-sm btn-outline-danger mb-4" href="{% url 'post' hood.id %}">New Post</a>
                 {% if hood.admin == user.profile %}
-                <a href="{% url 'members' hood.id %}" class="btn btn-sm btn-outline-info mb-4 ml-4">Members</a>
+                <a href="{% url 'members' hood.id %}" class="btn btn-sm btn-outline-danger mb-4 ml-4">Members</a>
                 {% endif %}
                 <form class="form-inline" method="get" action="{% url 'search' %}">
                     {% csrf_token %}
@@ -96,7 +96,7 @@
                                 <form action="" method="post">
                                     {% csrf_token%}
                                     {{form|crispy}}
-                                    <button type="submit" class="btn btn-sm btn-success">Save Business</button>
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">Save Business</button>
                                     <button type="button" class="btn btn-sm btn-outline-danger " data-dismiss="modal">
                                         Close
                                     </button>
