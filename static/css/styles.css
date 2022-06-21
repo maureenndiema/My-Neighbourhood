@@ -197,9 +197,9 @@ ul.CTAs a {
 }
 
 #content {
-    width: 100%;
+    /* width: 100%; */
     padding-left: 0px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     transition: all 0.3s;
 }
 
