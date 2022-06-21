@@ -1,70 +1,45 @@
-from django import test
 from django.test import TestCase
 from .models import *
-from django.contrib.auth.models import User
-from django.contrib import auth
-
 # Create your tests here.
 class ProfileTest(TestCase):
     def setUp(self):
-        self.user = User(username = 'maureen', email = 'ndiemam@gmail.com', password = 'passwadd')
+        self.user = User(username='maureen',email="ndiemam@gmail.com", password='1234')
         self.user.save()
-        self.maureen = Profile(bio = 'A Fullstack Programmer', user = self.user)
-
-    def tearDown(self):
-        Profile.objects.all().delete()
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.maureen,Profile))
+        self.assertTrue(isinstance(self.user, User))
 
-    def test_save(self):
-        Profile.objects.create()
-        self.maureen.save_user_profile(self.user)
-        users = Profile.objects.all()
-        self.assertTrue(len(users)>0)
+    def test_save_user(self):
+        self.user.save()
+
+    def test_delete_user(self):
+        self.user.delete()
+        
+class PostTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create(username='maureen',email="ndiemam@gmail.com")
+        self.NeighbourHood = NeighbourHood(name='Ngong', bio="Milimani", admin=self.user)
+    def test_instance(self):
+        self.assertTrue(isinstance(self.post, Post))
+        
+    def test_save_post(self):
+        self.post.save()
+        
+    def test_delete_post(self):
+        self.post.save()
+
+
 
 class HoodTest(TestCase):
     def setUp(self):
-        self.user = User(username='maureen', email='ndiemam@gmail.com', password='passwadd')
-        self.user.save()
-        self.maureen = Profile(bio='A fullstack Programmer', user=self.user)
-        self.NeighbourHood = NeighbourHood(name = '',bio = "",admin = self.user)
-
-    def tearDown(self):
-        Profile.objects.all().delete()
-        self.NeighbourHood.delete()
-
+        self.admin = User.objects.create(username='maureen',email="ndiemam@gmail.com")
+        self.NeighbourHood = NeighbourHood(name = 'Ngong',bio = "Milimani",admin = self.user)
     def test_instance(self):
-        self.assertTrue(isinstance(self.hood,NeighbourHood))
-
-    def test_save(self):
-        self.NeighbourHood.save_hood()
-        hoods = NeighbourHood.objects.all()
-        self.assertTrue(len(hoods) == 1)
-
-
-
-class PostTest(TestCase):
-    def setUp(self):
-        self.user = User(username='maureen', email='maureen@gmail.com', password='passwadd')
-        self.user.save()
-        self.maureen = Profile(bio='A fullstack Programmer', user=self.user)
-        self.NeighbourHood = NeighbourHood(name='Muthaiga', bio="kitusuru", admin=self.user)
-        self.business = Business(name="saniamo", owner = self.user, business_description= 'eucabeth',
-                                 locale = self.hood,business_number = 4322323)
-        self.post = Post(title='Postings',post = 'This is the post',
-                         hood = self.hood, poster = self.user)
-
-    def tearDown(self):
-        Profile.objects.all().delete()
-        self.NeighbourHood.delete()
-        self.business.delete()
-        self.post.delete()
-
-    def test_instance(self):
-        self.assertTrue(isinstance(self.post,Post))
-
-    def test_save(self):
-        self.post.save_post()
-        posts = Post.objects.all()
-        self.assertTrue(len(posts) == 1)
+        self.assertTrue(isinstance(self.hood, NeighbourHood))
+        
+    def test_save_post(self):
+        self.hood.save()
+        
+    def test_delete_post(self):
+        self.hood.save()
+    
