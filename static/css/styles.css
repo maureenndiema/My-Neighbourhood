@@ -64,10 +64,10 @@ span {
     align-items: stretch;
 }
 .tt{
-    color:#1a3e59;
+    color:rgb(177, 48, 59);
 }
 .hpost{
-   background-color:#1a3e59;
+   background-color:rgb(177, 48, 59);
    color: white;
 }
 .poster{
@@ -152,7 +152,7 @@ span {
 }
 
 #sidebar ul li a:hover {
-    color: teal;
+    color: rgb(177, 48, 59);
     background: #fff;
 }
 
@@ -163,7 +163,7 @@ span {
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: rgb(177, 48, 59);
 }
 
 a[data-toggle="collapse"] {
@@ -181,7 +181,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: rgb(177, 48, 59);
 }
 
 ul.CTAs {
