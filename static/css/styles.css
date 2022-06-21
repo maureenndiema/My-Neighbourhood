@@ -199,7 +199,7 @@ ul.CTAs a {
 #content {
     width: 100%;
     padding-left: 0px;
-    min-height: 70vh;
+    min-height: 100vh;
     transition: all 0.3s;
 }
 
