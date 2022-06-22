@@ -203,7 +203,7 @@ ul.CTAs a {
   transition: all 0.3s;
 }
 .bg-image {
-  background-image: url("/static/images/nighthood.jpg");
+  background-image: url("/static/images/greenhood.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
